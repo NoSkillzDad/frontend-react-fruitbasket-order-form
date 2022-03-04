@@ -68,3 +68,5 @@ Maak eigen componenten van elementen die je heel veel hebt hergebruikt. Om dit v
 * Maak er een mooie gestylde pagina van!
 * Gebruik één samengestelde `onChange` handler-functie voor alle fruitsoorten samen
 * En als je dan toch bezig bent, voorzie dan de buttons van conditionele styling. Wanneer een fruitsoort 1 of meer keer aangeklikt is, kun je 'm bijvoorbeeld een gekleurde rand geven!
+
+`https://github.com/hogeschoolnovi/frontend-react-fruitbasket-order-form`
