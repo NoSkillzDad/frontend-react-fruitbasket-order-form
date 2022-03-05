@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import './Fruit.css';
 
 const Fruit = ({isReset: parentIsReset = false, id, name, counter: parentCounter = 0,}) => {
 
@@ -10,7 +11,15 @@ const Fruit = ({isReset: parentIsReset = false, id, name, counter: parentCounter
         setCounter(parentCounter);
     }, [parentIsReset, parentCounter]);
 
-    // const handleToggleIsReset = () => setIsReset(!isReset);
+    // const handleToggleIsReset = () => setIsReset(!isReset); //leaving it here for individual resets if wanted in the future
+
+    const changeAmount = (operation) => {
+      switch (operation) {
+          case "add": return setCounter(counter + 1);
+          case "sub": return (counter > 0) ? setCounter(counter - 1) : setCounter(0);
+          default: return counter;
+      }
+    }
 
     return (
         <div id={id} className={'fruit'}>
@@ -18,16 +27,14 @@ const Fruit = ({isReset: parentIsReset = false, id, name, counter: parentCounter
             <button
                 className={"min-button"}
                 type={"button"}
-                onClick={() => {
-                    (counter > 0) ? setCounter(counter - 1) : setCounter(0);
-                }}
+                onClick={() => {changeAmount("sub")}}
             >-
             </button>
             {counter}
             <button
                 className={"plus-button"}
                 type={"button"}
-                onClick={() => (setCounter(counter + 1))}
+                onClick={() => changeAmount("add")}
             >+
             </button>
             {/*<button onClick={handleToggleIsReset}>Reset All</button>*/}
