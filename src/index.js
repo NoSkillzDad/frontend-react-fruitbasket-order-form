@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import AppRes from "./AppRes";
 // import App from './AppSH';
 
 ReactDOM.render(

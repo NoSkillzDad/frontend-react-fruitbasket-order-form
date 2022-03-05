@@ -52,22 +52,42 @@ body {
     margin-left: 0;
 }
 
-.reset-button {
-    background-color: #b9b9b9;
+.submit-button {
     width: 100%;
+    color: black;
     border-radius: .5em;
     border: 2px solid black;
-    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1.2em;
     font-weight: bold;
+    background-color: #5e83c0;
+
+}
+
+.reset-button {
+    width: 100%;
+    color: black;
+    border-radius: .5em;
+    border: 2px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #b9b9b9;
 }
 
 .reset-button:hover {
     background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #7eabfd;
     cursor: pointer;
 }
 

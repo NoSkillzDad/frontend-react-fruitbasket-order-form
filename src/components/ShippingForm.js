@@ -4,10 +4,22 @@ import {useForm} from 'react-hook-form';
 import "./ShippingForm.css";
 
 export default function ShippingForm() {
-    const {register, handleSubmit, formState: {errors, isSubmitSuccessful}, reset} = useForm();
+    // const {register, handleSubmit, formState: {errors, isSubmitSuccessful}, reset} = useForm({defaultValues: {  }});
+    const {register, handleSubmit, formState, reset} = useForm();
 
-    const onSubmit = data => console.log(data);
+    const  {errors, isSubmitted} = formState;
+
+    const onSubmit = data => {
+        console.log(data);
+        // console.log(isSubmitted);
+    };
     console.log(errors);
+
+    useEffect(() => {
+        if (isSubmitted) {
+            reset();
+        }
+    }, [formState, reset]);
 
     return (
         <form className={"client-form"} onSubmit={handleSubmit(onSubmit)}>
@@ -42,8 +54,11 @@ export default function ShippingForm() {
             <input type="checkbox" placeholder="akkoord-toa" {...register("akkoord-toa", {required: true})} id={"akkoord-toa"}/>
                 Ik gaa akkoord met de voorwaarden
             </label>
-            <button className={"reset-button"} type="submit">
+            <button className={"submit-button"} type="submit">
                 Versturen
+            </button>
+            <button className={"reset-button"} type="button" onClick={() => reset()}>
+                Reset
             </button>
         </form>
     );

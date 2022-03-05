@@ -8,7 +8,7 @@
     width: 280px;
 }
 
-.client-form > input, select, textarea {
+.client-form > input, select, textarea, button {
     margin-bottom: 10px;
 }
 
