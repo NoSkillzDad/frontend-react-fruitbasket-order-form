@@ -7,13 +7,14 @@ export default function ShippingForm() {
     // const {register, handleSubmit, formState: {errors, isSubmitSuccessful}, reset} = useForm({defaultValues: {  }});
     const {register, handleSubmit, formState, reset} = useForm();
 
-    const  {errors, isSubmitted} = formState;
+    const {errors, isSubmitted} = formState;
 
-    const onSubmit = data => {
-        console.log(data);
-        // console.log(isSubmitted);
+    const onSubmit = async (data) => {  //
+        console.log(JSON.stringify(data));
+        // alert(JSON.stringify(data));
     };
     console.log(errors);
+
 
     useEffect(() => {
         if (isSubmitted) {
@@ -51,7 +52,8 @@ export default function ShippingForm() {
             </div>
             <textarea {...register("Opmerking", {maxLength: 250})} rows={4} cols={33}/>
             <label id={"label-ak-toa"} htmlFor={"akkoord-toa"}>
-            <input type="checkbox" placeholder="akkoord-toa" {...register("akkoord-toa", {required: true})} id={"akkoord-toa"}/>
+                <input type="checkbox" placeholder="akkoord-toa" {...register("akkoord-toa", {required: true})}
+                       id={"akkoord-toa"}/>
                 Ik gaa akkoord met de voorwaarden
             </label>
             <button className={"submit-button"} type="submit">
