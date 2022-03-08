@@ -34,13 +34,13 @@ const Fruit = ({isReset: parentIsReset = false, id, name, counter: parentCounter
             >-
             </button>
             {/*<input type="text" id={id} name={id} value={counter} {...register(name)} />*/}
+            <input type="text" id={id} name={id} value={counter} />
             {/*<input type="text" id={id} name={id} value={counter} />*/}
-            {/*<input type="text" id={id} name={id} value={counter} />*/}
-            <Controller
-                name={id}
-                control={control}
-                render = {({field}) => <input type="text" id={id} name={id} value={counter} readOnly/> }
-                />
+            {/*<Controller*/}
+            {/*    name={id}*/}
+            {/*    control={control}*/}
+            {/*    render = {({field}) => <input type="text" id={id} name={id} value={counter} readOnly/> }*/}
+            {/*    />*/}
             {/*{counter}*/}
             <button
                 className={"plus-button"}

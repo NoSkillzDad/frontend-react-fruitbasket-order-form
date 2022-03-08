@@ -2,16 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
 
 body {
-    width: 720px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    display: flex;
 }
 
 .header {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     border: 4px solid #44917b;
     border-radius: .5em;
@@ -37,11 +33,11 @@ body {
 
 .my-main {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-top: 20px;
-    justify-content: space-between;
+    margin-left: auto;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*flex-wrap: nowrap;*/
+    /*margin-top: 20px;*/
 }
 
 /*.fruit-container {*/
@@ -60,11 +56,9 @@ body {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 1.2em;
     font-weight: bold;
     background-color: #5e83c0;
-
 }
 
 .reset-button {
@@ -75,7 +69,6 @@ body {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 1.2em;
     font-weight: bold;
     background-color: #b9b9b9;

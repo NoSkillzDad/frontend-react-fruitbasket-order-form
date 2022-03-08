@@ -1,13 +1,9 @@
 /* eslint-disable */
-// eslint-disable-next-line
 import React, {useState} from 'react';
 // import {useForm} from "react-hook-form";
 import './App.css';
 import Fruit from "./components/Fruit";
-// import ShippingForm from "./components/ShippingForm";
 import ShippingFormRC from "./components/ShippingFormRC";
-// import FormField from "./components/FormField";
-// import ShippingForm from "./components/ShippingForm";
 
 const App = () => {
 
@@ -63,8 +59,8 @@ const App = () => {
                 {/*    />*/}
                 {/*    <button className={"reset-button"} onClick={handleToggleIsReset}>Reset All</button>*/}
                 {/*</div>*/}
+
                 <ShippingFormRC>
-                    <div className={"fruit-container"}>
                         <Fruit
                             id={'aardbeien'}
                             name={'🍓 Aarbeien'}
@@ -89,9 +85,13 @@ const App = () => {
                             isReset={isReset}
                             counter={counter}
                         />
+
+                    <div className={"button-wrapper"}>
                         <button className={"reset-button"} onClick={handleToggleIsReset}>Reset All</button>
                     </div>
                 </ShippingFormRC>
+
+
             </div>
         </>
     );
