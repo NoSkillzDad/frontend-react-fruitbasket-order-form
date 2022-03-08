@@ -12,3 +12,9 @@
 .fruit > * {
     margin: 5px;
 }
+
+.fruit > input {
+    background-color: transparent;
+    border: 0px solid;
+    width: 10px;
+}

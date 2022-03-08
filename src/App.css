@@ -44,13 +44,13 @@ body {
     justify-content: space-between;
 }
 
-.fruit-container {
-    width: 280px;
-    border: 1px solid #cecece;
-    padding: 20px;
-    border-radius: .5em;
-    margin-left: 0;
-}
+/*.fruit-container {*/
+/*    width: 280px;*/
+/*    border: 1px solid #cecece;*/
+/*    padding: 20px;*/
+/*    border-radius: .5em;*/
+/*    margin-left: 0;*/
+/*}*/
 
 .submit-button {
     width: 100%;
