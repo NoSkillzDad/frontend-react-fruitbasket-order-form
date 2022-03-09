@@ -87,7 +87,7 @@ const App = () => {
                         />
 
                     <div className={"button-wrapper"}>
-                        <button className={"reset-button"} onClick={handleToggleIsReset}>Reset All</button>
+                        <button className={"reset-button"} type={"button"} onClick={handleToggleIsReset}>Reset All</button>
                     </div>
                 </ShippingFormRC>
 

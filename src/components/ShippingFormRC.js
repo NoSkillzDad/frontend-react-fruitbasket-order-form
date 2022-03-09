@@ -92,18 +92,18 @@ const ShippingFormRC = ({ children }) => {
                     requiredMsg: 'U moet een achternaam invoelen'
                 }
             },
-            {
-                title: "Email",
-                fieldType: {
-                    type: "email"
-                },
-                name: "email",
-                validationProps: {
-                    // isRequired: false,
-                    isRequired: true,
-                    requiredMsg: 'Wij hebben uw email adres nodig'
-                }
-            },
+            // {
+            //     title: "Email",
+            //     fieldType: {
+            //         type: "email"
+            //     },
+            //     name: "email",
+            //     validationProps: {
+            //         // isRequired: false,
+            //         isRequired: true,
+            //         requiredMsg: 'Wij hebben uw email adres nodig'
+            //     }
+            // },
             {
                 title: "Leeftijd",
                 fieldType: {
