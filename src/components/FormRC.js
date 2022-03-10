@@ -172,7 +172,9 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                             <button
                                 className={"min-button"}
                                 type={"button"}
-                                onClick={() => adjustCounter("sub")}
+                                onClick={() => !getValues(name) ? setValue(name, 0) : setValue(name, getValues(name) - 1)
+                                    // adjustCounter("sub")
+                            }
                             >-
                             </button>
                             {/*<input type="text" id={id} name={id} value={counter} readOnly/>*/}
@@ -183,7 +185,9 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                             <button
                                 className={"plus-button"}
                                 type={"button"}
-                                onClick={() => adjustCounter("add")}
+                                onClick={() => setValue(name, getValues(name) + 1)
+                                    // adjustCounter("add")
+                            }
                                 // onClick={() => changeAmount("add")}
                             >+
                             </button>
