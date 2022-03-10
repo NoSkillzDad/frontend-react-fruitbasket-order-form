@@ -1,0 +1,43 @@
+.client-form {
+    height: 460px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+    position: relative;
+}
+
+.client-form input, select, textarea, button {
+    margin-bottom: 0.4em;
+}
+
+.dual-radio-buttons {
+    margin-bottom: 10px;
+}
+
+.client-form textarea {
+    resize: none;
+}
+
+.button-wrapper {
+    position: absolute;
+    bottom: 5px;
+}
+
+.product-amount {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.product-amount::-webkit-outer-spin-button,
+.product-amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.product-amount[type=number] {
+    -moz-appearance: textfield;
+}

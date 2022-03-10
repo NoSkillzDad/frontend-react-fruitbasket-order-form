@@ -1,39 +1,18 @@
-// eslint-disable-next-line
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import Fruit from "./components/Fruit";
+import ShippingFormRC from "./components/ShippingFormRC";
 
 const App = () => {
 
-    const [isReset, setIsReset] = useState(false);
-    // eslint-disable-next-line
-    const [counter, setCounter] = useState(0);
-
-    const handleToggleIsReset = () => setIsReset(!isReset);
-
     return (
         <>
-            <h1>Fruitmand bezorgservice</h1>
-            <Fruit
-                id={'banana'}
-                name={'Bananas'}
-                isReset={isReset}
-                counter={counter}
-            />
-            <Fruit
-                id={'apple'}
-                name={'Apples'}
-                isReset={isReset}
-                counter={counter}
-            />
-            <Fruit
-                id={'kiwi\'s'}
-                name={'Kiwi\'s'}
-                isReset={isReset}
-                counter={counter}
-            />
-
-            <button onClick={handleToggleIsReset}>Reset All</button>
+            <div className={"header"}>
+                <h1>Fruitmand Bezorgservice</h1>
+                <h3>Je mag toch niet naar buiten</h3>
+            </div>
+            <div className={"my-main"}>
+                <ShippingFormRC />
+            </div>
         </>
     );
 }
