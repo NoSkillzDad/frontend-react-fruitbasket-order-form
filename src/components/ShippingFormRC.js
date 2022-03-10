@@ -8,8 +8,7 @@ const ShippingFormRC = ({ children }) => {
 
     const onSubmit = async (data, e) => {  //
         e.target.reset();
-        // console.log(JSON.stringify(data));
-        console.log(data);
+        // console.log(data);
         alert(JSON.stringify(data));
     };
 
@@ -45,6 +44,7 @@ const ShippingFormRC = ({ children }) => {
 
     }
 
+    //template for the fruits' section of the form
     const templateFruits = {
         title: "Fruits",
         fields: [
@@ -91,6 +91,7 @@ const ShippingFormRC = ({ children }) => {
         ]
     }
 
+    //template for the client's information section of the form
     const templateDetails = {
         title: "Klantgegevens",
         fields: [
@@ -244,7 +245,7 @@ const ShippingFormRC = ({ children }) => {
             validate={validate}
             onSubmit={onSubmit}
             useLabels = {false}
-        >{children}</FormRC>
+        />
     );
 }
 

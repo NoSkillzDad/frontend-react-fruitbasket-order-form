@@ -34,19 +34,7 @@ body {
 .my-main {
     width: 100%;
     margin-left: auto;
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*flex-wrap: nowrap;*/
-    /*margin-top: 20px;*/
 }
-
-/*.fruit-container {*/
-/*    width: 280px;*/
-/*    border: 1px solid #cecece;*/
-/*    padding: 20px;*/
-/*    border-radius: .5em;*/
-/*    margin-left: 0;*/
-/*}*/
 
 .submit-button {
     width: 100%;

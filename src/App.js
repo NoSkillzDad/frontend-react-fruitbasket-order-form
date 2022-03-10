@@ -1,13 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import './App.css';
 import ShippingFormRC from "./components/ShippingFormRC";
 
 const App = () => {
-
-    // const onFormSubmit = (data) => {
-    //     console.log(data);
-    // }
 
     return (
         <>

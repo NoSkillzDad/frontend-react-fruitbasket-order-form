@@ -1,16 +1,13 @@
 import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 
-const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels, children}) => {
+const FormRC = ({template, template2, onSubmit, useLabels}) => {
 
     const {
         register,
         handleSubmit,
         formState: {errors, isSubmitSuccessful, isValid},
         reset,
-        watch,
-        setError,
-        clearErrors,
         getValues,
         setValue
     } = useForm({
@@ -25,19 +22,12 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
     const {title, fields} = template;
     const {title: title2, fields: fields2} = template2;
 
-    const [isReset, setIsReset] = useState(false);
-    // eslint-disable-next-line
-    const [counter, setCounter] = useState(0);
-
-    const handleToggleIsReset = () => setIsReset(!isReset);
-
     useEffect(() => {
         if (isSubmitSuccessful) {
             reset();
         }
         // }, [formState, reset, isSubmitted]);
     }, [reset, isSubmitSuccessful]);
-
 
     const renderOptions = (options, type, name, isRequired) => {
         return options.map(option => {
@@ -155,12 +145,11 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                 case 'fruit': {
 
                     const adjustCounter = (operation) => {
-                        // !getValues(id).parseInt ? getValues(id).parseInt() : 0;
                         switch (operation) {
                             case "add":
                                 return setValue(name, getValues(name).parseInt + 1);
                             case "sub":
-                                return (getValues(name) > 0) ? setValue(name, getValues(name) - 1) : 0
+                                return (getValues(name) > 0) ? setValue(name, getValues(name).parseInt - 1) : 0
                             default:
                                 return getValues(name)
                         }
@@ -178,7 +167,7 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                             >-
                             </button>
                             {/*<input type="text" id={id} name={id} value={counter} readOnly/>*/}
-                            <input type="number" id={name} name={name} {...register(name, {
+                            <input className={"product-amount"} type="number" id={name} name={name} max="999" min="0" {...register(name, {
                                 required: isRequired
                             })}
                             />
@@ -212,7 +201,6 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                     <legend>{title2}</legend>
                     {renderFields(fields2, useLabels)}
                     <div className={"button-wrapper"}>
-                        {/*<button className={"reset-button"} type={"button"} onClick={handleToggleIsReset}>Reset All</button>*/}
                         <button className={"reset-button"} type="button" onClick={() => reset({aardbeien: 0, bananas: 0, kiwis: 0, appels: 0})}>
                             Reset All
                         </button>
@@ -221,8 +209,6 @@ const FormRC = ({template, template2, onSubmit, watchFields, validate, useLabels
                 <fieldset>
                     <legend>{title}</legend>
                     {renderFields(fields, useLabels)}
-
-                    {/*<button className={"submit-button"} type="submit" disabled={!isValid}>*/}
 
                     <div className={"button-wrapper"}>
                         <button className={"submit-button"} type="submit">

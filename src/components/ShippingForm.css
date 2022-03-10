@@ -26,14 +26,18 @@
     bottom: 5px;
 }
 
+.product-amount {
+    outline: none;
+}
+
 /* Chrome, Safari, Edge, Opera */
-.client-form input::-webkit-outer-spin-button,
-.client-form input::-webkit-inner-spin-button {
+.product-amount::-webkit-outer-spin-button,
+.product-amount::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* Firefox */
-.client-form input[type=number] {
+.product-amount[type=number] {
     -moz-appearance: textfield;
 }
