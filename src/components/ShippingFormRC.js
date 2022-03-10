@@ -1,37 +1,21 @@
 import React from "react";
 import FormRC from "./FormRC";
 import './ShippingForm.css';
+import './Fruit.css';
 
 
 const ShippingFormRC = ({ children }) => {
 
     const onSubmit = async (data, e) => {  //
         e.target.reset();
-        console.log(JSON.stringify(data));
-        // alert(JSON.stringify(data));
+        // console.log(JSON.stringify(data));
+        console.log(data);
+        alert(JSON.stringify(data));
     };
 
-    // const validate = (watchValues, {errors, setError, clearErrors}) => {
     const validate = (watchValues, errorMethods) => {
         let {errors, setError, clearErrors} = errorMethods;
 
-        // if (watchValues['leeftijd'] < 15) {
-        //     if (!errors['leeftijd']) {
-        //         setError('leeftijd', {
-        //             type: 'manual',
-        //             message: 'Jij moet oudere te bestellen'
-        //         })
-        //     }
-        // }
-        //
-        // if (watchValues['voornaam'] === 'Admin') {
-        //     if (!errors['voornaam']) {
-        //         setError('voornaam', {
-        //             type: 'manual',
-        //             message: 'U kan niet Admin gebruiken als voornaam'
-        //         })
-        //     }
-        // }
 
         if (watchValues[0] < 15) {
             if (!errors['leeftijd']) {
@@ -61,7 +45,53 @@ const ShippingFormRC = ({ children }) => {
 
     }
 
-    const template = {
+    const templateFruits = {
+        title: "Fruits",
+        fields: [
+            {
+                title: '🍓 Aardbeien',
+                fieldType: {
+                    type: 'fruit',
+                },
+                name: 'aardbeien',
+                validationProps: {
+                    isRequired: false,
+                }
+            },
+            {
+                title: '🍌 Bananas',
+                fieldType: {
+                    type: 'fruit',
+                },
+                name: 'bananas',
+                validationProps: {
+                    isRequired: false,
+                }
+            },
+            {
+                title: '🍏 Apples',
+                fieldType: {
+                    type: 'fruit',
+                },
+                name: 'appels',
+                validationProps: {
+                    isRequired: false,
+                }
+            },
+            {
+                title: '🥝 Kiwi\'s',
+                fieldType: {
+                    type: 'fruit',
+                },
+                name: 'kiwis',
+                validationProps: {
+                    isRequired: false,
+                }
+            }
+        ]
+    }
+
+    const templateDetails = {
         title: "Klantgegevens",
         fields: [
             {
@@ -92,18 +122,6 @@ const ShippingFormRC = ({ children }) => {
                     requiredMsg: 'U moet een achternaam invoelen'
                 }
             },
-            // {
-            //     title: "Email",
-            //     fieldType: {
-            //         type: "email"
-            //     },
-            //     name: "email",
-            //     validationProps: {
-            //         // isRequired: false,
-            //         isRequired: true,
-            //         requiredMsg: 'Wij hebben uw email adres nodig'
-            //     }
-            // },
             {
                 title: "Leeftijd",
                 fieldType: {
@@ -221,8 +239,8 @@ const ShippingFormRC = ({ children }) => {
 
     return (
         <FormRC
-            template={template}
-            // watchFields={["leeftijd", "voornaam"]}
+            template={templateDetails}
+            template2={templateFruits}
             validate={validate}
             onSubmit={onSubmit}
             useLabels = {false}
